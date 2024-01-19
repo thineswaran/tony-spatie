@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Filament\Resources;
-
+use Auth;
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\Pages\CreateUser;
 use App\Filament\Resources\UserResource\RelationManagers;
@@ -29,6 +29,29 @@ class UserResource extends Resource
 
     //order in the sidebar
     protected static ?int $navigationSort = 1;
+
+    public static function getEloquentQuery(): Builder
+    {
+
+        //dd(Auth::user()->roles->pluck('name'));
+
+    if( Auth::user()->roles->pluck('name')->first()=="Writer" ){
+
+        return parent::getEloquentQuery()->where('id', auth()->id());
+
+    }
+    elseif( Auth::user()->roles->pluck('name')->first()=="Moderator" ){
+
+        return parent::getEloquentQuery()->where('id','>','1' );
+
+    }else{
+
+        return parent::getEloquentQuery();
+
+    }
+
+
+    }
 
     public static function form(Form $form): Form
     {
