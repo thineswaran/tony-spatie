@@ -4,7 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\RoleResource\Pages;
 use App\Filament\Resources\RoleResource\RelationManagers;
-use Spatie\Permission\Models\Role;
+//use Spatie\Permission\Models\Role;
+use App\Models\Role;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
@@ -82,4 +83,17 @@ class RoleResource extends Resource
             'edit' => Pages\EditRole::route('/{record}/edit'),
         ];
     }
+
+
+    public static function getEloquentQuery(): Builder
+    {
+
+        //return parent::getEloquentQuery()->whereBelongsTo(auth()->user());
+
+        //return all rows, except Admin in grid
+        return parent::getEloquentQuery()->where('name','!=','Admin');
+
+    }
+
+
 }

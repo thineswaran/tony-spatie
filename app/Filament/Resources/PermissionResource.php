@@ -4,7 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PermissionResource\Pages;
 use App\Filament\Resources\PermissionResource\RelationManagers;
-use Spatie\Permission\Models\Permission;
+//use Spatie\Permission\Models\Permission;
+use App\Models\Permission;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms;
 use Filament\Forms\Form;
