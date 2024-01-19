@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
              'email' => 'admin@gmail.com',
          ]);
 
-         $role = Role::create(['name' => 'admin']);
+         $role = Role::create(['name' => 'Admin']);
 
          $user->assignRole($role);
 
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'writer@gmail.com',
         ]);
 
-        $role = Role::create(['name' => 'writer']);
+        $role = Role::create(['name' => 'Writer']);
 
         $user->assignRole($role);
 
