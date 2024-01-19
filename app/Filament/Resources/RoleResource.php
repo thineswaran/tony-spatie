@@ -32,8 +32,8 @@ class RoleResource extends Resource
                 //
                 TextInput::make('name')
                 ->required()
-                ->unique()
-                //to enable overwriting ->unique(ignoreRecord:true)
+                //->unique()
+                /*to enable overwriting*/ ->unique(ignoreRecord:true)
                 ->minLength(2)
                 ->maxLength(200),
 

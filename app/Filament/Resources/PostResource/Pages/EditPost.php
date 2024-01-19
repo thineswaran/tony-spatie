@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\RoleResource\Pages;
+namespace App\Filament\Resources\PostResource\Pages;
 
-use App\Filament\Resources\RoleResource;
+use App\Filament\Resources\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditRole extends EditRecord
+class EditPost extends EditRecord
 {
-    protected static string $resource = RoleResource::class;
+    protected static string $resource = PostResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -16,12 +16,14 @@ class EditRole extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
     }
     protected function getSavedNotificationTitle(): ?string
     {
-        return 'Role updated';
+        return 'Post updated';
     }
+
 }

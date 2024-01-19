@@ -55,8 +55,13 @@ class UserResource extends Resource
                     ->multiple()
                     ->searchable()
                     ->relationship('roles','name')
-                    ->preload()
+                    ->preload(),
 
+                    Select::make('permissions')
+                    ->multiple()
+                    ->searchable()
+                    ->relationship('permissions','name')
+                    ->preload()
 
                 ])->columns(2)
 
