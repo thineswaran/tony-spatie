@@ -1,7 +1,5 @@
-@import '/vendor/filament/filament/resources/css/theme.css';
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+/*@import 'index.css'*/
 
 @config 'tailwind.config.js';
-
-.fi-sidebar {
-    background-color: #fafafa;
-}
